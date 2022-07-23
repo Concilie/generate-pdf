@@ -7,9 +7,6 @@ const fs = require('fs')
 
 
 
-
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
@@ -50,7 +47,7 @@ app.get('/download', async (req, res) => {
     res.set('Content-disposition', 'attachment; filename=download.pdf')
 
 
-    // Send res to user containing pdf and download "instruction"
+    // send res to user
     newStream.pipe(res)
 })
 
